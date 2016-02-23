@@ -1,10 +1,41 @@
+ <div class="bar bar-positive" style="background-color:#00b36b;width:100%;">
+    <h1 class="title" >welcome to {{getData.companyName}} Company </h1>
+    <a class="button icon-left ion-arrow-left-a button-clear button-dark" ui-sref="dashboard.showCompany">Back</a>
+    <button class="button button-royal" ng-click="signOut()" ng-show="isLoggedIn"  >Sign Out</button>
+    </div><br><br>
+
 <div ng-click="showF=!showF"><a class="button button-calm icon-center ion-plus"></a>
 
 </div>
-
-
-
-<ul class="list"><li class="item" ng-repeat="prd in getData">
+    <form name="form" ng-init="required=true" novalidate>
+<div name="form"  class="list" ng-show="showF" >
+  <label class="item item-input">
+    <span class="input-label">Product Name</span>
+    <input type="text" ng-required="required" ng-model="product.productName">
+  </label>
+  <div class="list">
+  <label class="item item-input">
+    <span class="input-label">product Weight</span>
+    <input type="number" ng-required="required" ng-model="product.productWeight">
+  </label>
+  
+  <div class="list">
+  <label class="item item-input">
+    <span class="input-label">Product Price</span>
+    <input type="number" ng-required="required" ng-model="product.productPrice">
+  </label>
+  </div>
+   <button class="button button-positive" ng-disabled="form.$invalid" ng-click="submitProducts(product)">
+  Submit Products
+</button>
+  </div>
+</div>
+</form>
+  
+  
+  
+  <div>
+  <ul class="list"><li class="item" ng-repeat="prd in getData">
     <div class="list">
         <div class="item-item-divider">
             Products
@@ -14,26 +45,8 @@
         <h2>Product Price: {{prd.productPrice}}</h2>
     </div>
 </li></ul>
-<div class="list" ng-show="showF">
-  <label class="item item-input">
-    <span class="input-label">Product Name</span>
-    <input type="text" ng-model="product.productName">
-  </label>
-  <div class="list">
-  <label class="item item-input">
-    <span class="input-label">product Weight</span>
-    <input type="number" ng-model="product.productWeight">
-  </label>
-  
-  <div class="list">
-  <label class="item item-input">
-    <span class="input-label">Product Price</span>
-    <input type="number" ng-model="product.productPrice">
-  </label>
   </div>
-   <button class="button button-positive" ng-click="submitProducts(product)">
-  Submit Products
-</button>
-  
-  
+
+
+
   

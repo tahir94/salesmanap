@@ -1,13 +1,25 @@
-<ul class="list"><li class="item" ng-repeat="items in showData">
+  <div class="bar bar-positive" style="background-color:#00b36b;width:100%;">
+    <h1 class="title" >welcome to {{getData.companyName}} Company </h1>
+    <a class="button icon-left ion-arrow-left-a button-clear button-dark" ui-sref="dashboard.showCompany">Back</a>
+    <button class="button button-royal" ng-click="signOut()" ng-show="isLoggedIn"  >Sign Out</button>
+    </div><br><br>
+
+    <ul class="list"><li class="item" ng-repeat="items in showData">
     <div class="list">
 
-  <div class="item item-divider">
-    Salesman
-  </div>
-    <!--<h1 class="item">-->    <h2>User Name    :   {{items.userName}}</h2>
-    <!--<h1 class="item">-->  <h2>User Last Name:   {{items.userLastName}}</h2>
-    <!--<h1 class="item">-->  <h2>User Password  :   {{items.userPass}}</h2>
-</li></ul>
+  <div class="item item-divider" style="background-color:#606060 ">
+    <h1>Salesman</h1>
+  </div><br>
+        <h1 class="item">User Name    :   {{items.userName}}</h1>
+     <h1 class="item">User Last Name :   {{items.userLastName}}</h1>
+    <h1 class="item">User Password  :   {{items.userPass}}</h1><br>
+    </li></ul>
+
+
+
+
+
+
 
 
 

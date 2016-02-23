@@ -1,15 +1,25 @@
 <!--<div style="margin:0 auto; display:block; width:100%; background-color:#00b36b;"><h1>welcome to {{getData.companyName}}
-  Company :</h1></div>-->
+  Company :</h1>
+  
+  </div>-->
+     <div class="bar bar-positive" style="background-color:#00b36b;width:100%;">
+    <h1 class="title" >welcome to {{getData.companyName}} Company </h1>
+     
+    <button class="button button-royal" ng-click="signOut()" ng-show="isLoggedIn"  >Sign Out</button>
+   
+    </div>  
+    <br><br>
+  
 <div class="row">
 
   <div class="col-75">
-    <button class="button button-calm button-block" ng-click="createUser()" ui-sref="dashboard.createUser">
+    <button class="button button-dark button-block" ng-click="createUser()" ui-sref="dashboard.createUser">
       create user
     </button>
-    <button class="button button-calm button-block" ng-click="showSalesman()" ui-sref="dashboard.salesman">
+    <button class="button button-dark button-block" ng-click="showSalesman()" ui-sref="dashboard.salesman">
       Salesman
     </button>
-    <button class="button button-calm button-block" ng-click="products()" ui-sref="dashboard.products">
+    <button class="button button-dark button-block" ng-click="products()" ui-sref="dashboard.products">
       Products
     </button>
   </div>

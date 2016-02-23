@@ -1,21 +1,26 @@
+  <div class="bar bar-positive" style="background-color:#00b36b;width:100%;">
+    <h1 class="title" >welcome to {{getData.companyName}} Company </h1>
+    <a class="button icon-left ion-arrow-left-a button-clear button-dark" ui-sref="dashboard.showCompany">Back</a>
+    <button class="button button-royal" ng-click="signOut()" ng-show="isLoggedIn"  >Sign Out</button>
+    </div><br><br>
 <form name="formOne" novalidate ng-init="required=true">
 
     <label class="item item-input">
-        <span class="input-label">user Name</span>
-        <input type="text" ng-required="required" ng-model="saleman.userName">
+        <h1 class="input-label" style="background-color:#330066;color:#33CCFF ;padding:15px;margin:-15px">user Name</h1>
+        <input type="text" style="padding:25px" ng-required="required" ng-model="saleman.userName" placeholder="please enter salesman name">
     </label>
 
 
     <label class="item item-input">
-        <span class="input-label">user Last Name</span>
-        <input type="text" ng-required="required" ng-model="saleman.userLastName">
+        <h1 class="input-label" style="background-color:#330066;color:#33CCFF;padding:15px;margin:-15px">user Last Name</h1>
+        <input type="text" style="padding:25px" ng-required="required" ng-model="saleman.userLastName" placeholder="please enter salesman last name">
     </label>
 
 
 
     <label class="item item-input">
-        <span class="input-label">user Password</span>
-        <input type="password" ng-required="required" ng-model="saleman.userPass">
+        <h1 class="input-label" style="background-color:#330066;color:#33CCFF;padding:15px;margin:-15px">user Last Name</h1>
+        <input type="password" style="padding:25px" ng-required="required" ng-model="saleman.userPass" placeholder="please enter salesman password">
     </label>
 
 

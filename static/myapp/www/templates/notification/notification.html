@@ -1,3 +1,4 @@
+
 <style>
   map {
     width: 75%;
@@ -9,12 +10,16 @@
   }
 </style>
 <ion-view>
-
+  <div class="bar bar-positive" style="background-color:#00b36b;width:100%;">
+    <h1 class="title" >welcome to {{getData.companyName}} Company </h1>
+    <a class="button icon-left ion-arrow-left-a button-clear button-dark" ui-sref="dashboard.showCompany">Back</a>
+    <button class="button button-stable" ng-click="signOut()" ng-show="isLoggedIn"  >Sign Out</button>
+    </div><br><br>
   <div class="list list-inset">
 
     <div class="item">
 
-     <h2>Product Name      : {{notification.productName}}</h2>
+      <h2>Product Name     : {{notification.productName}}</h2>
       <h2>Product Weight   : {{notification.productWeight}}</h2>
       <h2>Product Price    : {{notification.productPrice}}</h2>
       <h2>Product Quantity : Rs.{{notification.quantity}}</h2>
