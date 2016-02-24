@@ -95,17 +95,14 @@ app.controller("dashboardController", function ($interval, $location, firebaseRe
         console.log(data)
         console.log(data.data)
         $scope.companyData = data.data.companyName;
-        //   data.$loaded(function(){
-        //       console.log(data.companyName)
-        //   })
-
+      
 
       }, function (err) {
         console.log("Error : ", err)
       })
 
 
-    $state.go("dashboard.showCompany");
+   $state.go("dashboard.showCompany");
 
 
     //$scope.company = $scope.companyData;
@@ -131,19 +128,19 @@ app.controller("dashboardController", function ($interval, $location, firebaseRe
 // })
 
   $scope.saleman = {firebaseToken: token};
-
-
   $scope.submitUser = function (saleman) {
     console.log(saleman);
     $http.post("/salesman", saleman)
       .then(function (success) {
         console.log(success);
-      }, function (err) {
+          }, function (err) {
         console.log(err);
       });
-
-    $state.go("dashboard.showCompany")
-  };
+      $state.go("dashboard.showCompany")
+       };
+      
+     
+  
 
   $scope.showSalesman = function () {
     $http.get("/getSalesman/" + token).then(function (data) {
@@ -156,7 +153,7 @@ app.controller("dashboardController", function ($interval, $location, firebaseRe
   };
 
 
-  // $scope.isUser = true;
+  
 
 
 });

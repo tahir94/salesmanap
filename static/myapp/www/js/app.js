@@ -40,7 +40,7 @@ angular.module('starter', ['ionic', 'firebase', 'leaflet-directive'])
         templateUrl: 'templates/login.html',
         controller: "loginController",
         resolve: {
-          user: function getUserId() {
+          user: function getUserId($state) {
             if (localStorage.getItem("firebaseToken")) {
               $state.go("dashboard")
             }
@@ -55,7 +55,7 @@ angular.module('starter', ['ionic', 'firebase', 'leaflet-directive'])
         templateUrl: 'templates/signUp/signUp.html',
         controller: "signUpController",
         resolve: {
-          user: function getUserId() {
+          user: function getUserId($state) {
             if (localStorage.getItem("firebaseToken")) {
               $state.go("dashboard")
             }
@@ -66,12 +66,8 @@ angular.module('starter', ['ionic', 'firebase', 'leaflet-directive'])
 
       .state("dashboard", {
         url: "/dashboard",
-
-
         templateUrl: "templates/dashboard.html",
         controller: "dashboardController",
-
-
       })
 
       .state("dashboard.home", {
@@ -79,7 +75,7 @@ angular.module('starter', ['ionic', 'firebase', 'leaflet-directive'])
         isLoggedIn: true,
 
         resolve: {
-          abcd: function aa() {
+          abcd: function aa($state) {
             if (!localStorage.getItem("firebaseToken")) {
               $state.go("login");
             }
