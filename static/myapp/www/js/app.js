@@ -70,26 +70,6 @@ angular.module('starter', ['ionic', 'firebase', 'leaflet-directive'])
         controller: "dashboardController",
       })
 
-      .state("dashboard.home", {
-        url: "/home",
-        isLoggedIn: true,
-
-        resolve: {
-          abcd: function aa($state) {
-            if (!localStorage.getItem("firebaseToken")) {
-              $state.go("login");
-            }
-          },
-        },
-        views: {
-          "dashboard-Content": {
-            templateUrl: "templates/home.html",
-
-          }
-        }
-
-      })
-
 
       .state("dashboard.createCompany", {
         url: "/createCompany",
@@ -119,15 +99,7 @@ angular.module('starter', ['ionic', 'firebase', 'leaflet-directive'])
         }
 
       })
-      .state("dashboard.getCompany", {
-        url: "/getCompany",
-        views: {
-          "dashboard-Content": {
-            templateUrl: "templates/getCompany.html"
-          }
-        }
 
-      })
       .state("dashboard.salesman", {
         url: "/salesman",
         views: {
@@ -163,14 +135,3 @@ angular.module('starter', ['ionic', 'firebase', 'leaflet-directive'])
 
   })
 
-//  .factory("httpInterceptros",function(){
-//      return{
-//          request : function(config){
-//              var firebaseToken = localStorage.getItem("firebaseToken");
-//              if(firebaseToken){
-//                  config.url = config.url + "?firebaseToekn=" + firebaseToken;
-//              }
-//              return config;
-//          }
-//      }
-//  })

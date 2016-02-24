@@ -1,9 +1,8 @@
- <div class="bar bar-positive" style="background-color:#00b36b;width:100%;">
-    <h1 class="title" >welcome to {{getData.companyName}} Company </h1>
-    <a class="button icon-left ion-arrow-left-a button-clear button-dark" ui-sref="dashboard.showCompany">Back</a>
-    <button class="button button-royal" ng-click="signOut()" ng-show="isLoggedIn"  >Sign Out</button>
-    </div><br><br>
-
+<div class="bar bar-positive" style="background-color:#00b36b;width:100%;">
+  <h1 class="title" >welcome to {{getData.companyName}} Company </h1>
+  <a class="button icon-left ion-arrow-left-a button-clear button-dark" ui-sref="dashboard.showCompany">Back</a>
+  <button class="button button-royal" ng-click="signOut()" ng-show="isLoggedIn"  >Sign Out</button>
+</div><br><br>
 <div ng-click="showF=!showF"><a class="button button-calm icon-center ion-plus"></a>
 
 </div>
@@ -18,7 +17,7 @@
     <span class="input-label">product Weight</span>
     <input type="number" ng-required="required" ng-model="product.productWeight">
   </label>
-  
+
   <div class="list">
   <label class="item item-input">
     <span class="input-label">Product Price</span>
@@ -31,9 +30,9 @@
   </div>
 </div>
 </form>
-  
-  
-  
+
+
+
   <div>
   <ul class="list"><li class="item" ng-repeat="prd in getData">
     <div class="list">
@@ -49,4 +48,3 @@
 
 
 
-  

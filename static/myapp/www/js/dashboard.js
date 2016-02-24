@@ -64,7 +64,6 @@ app.controller("dashboardController", function ($interval, $location, firebaseRe
 
       console.log('my data is ', data);
       $scope.abc = true;
-
       if (data.data == "") {
         $state.go("dashboard.createCompany");
       }
@@ -75,15 +74,11 @@ app.controller("dashboardController", function ($interval, $location, firebaseRe
       $scope.getData = data.data;
 
 
-      //     console.log("hello to get company",$rootScope.getData);
 
-      //     $scope.showCompany = data
-      //     console.log("show company!! " +$scope.showCompany)
     }, function (err) {
 
       console.log(err)
-    }
-  )
+    });
 
 
   $scope.addCompany = function (comData) {
@@ -91,46 +86,22 @@ app.controller("dashboardController", function ($interval, $location, firebaseRe
     $http.post("/createCompany", comData)
 
       .then(function (data) {
-        console.log(comData, token)
-        console.log(data)
-        console.log(data.data)
+        console.log(comData, token);
+        console.log(data);
+        console.log(data.data);
         $scope.companyData = data.data.companyName;
-      
 
       }, function (err) {
         console.log("Error : ", err)
-      })
+      });
+    $state.go("dashboard.showCompany");
+  };
 
-
-   $state.go("dashboard.showCompany");
-
-
-    //$scope.company = $scope.companyData;
-    // $http.get("/showCompany").then(function(datas){
-    //     console.log(datas)
-
-    // },function(err){
-    //     console.log(err)
-    // })
-
-
-  }
-
-
-// $http.get("/showCompany").then(function(data){
-//
-//     if(data){
-//         console.log(data)
-//     }
-//
-// },function(error){
-//     console.log(error)
-// })
 
   $scope.saleman = {firebaseToken: token};
   $scope.submitUser = function (saleman) {
     console.log(saleman);
-    $http.post("/salesman", saleman)
+      $http.post("/salesman", saleman)
       .then(function (success) {
         console.log(success);
           }, function (err) {
@@ -138,9 +109,9 @@ app.controller("dashboardController", function ($interval, $location, firebaseRe
       });
       $state.go("dashboard.showCompany")
        };
-      
-     
-  
+
+
+
 
   $scope.showSalesman = function () {
     $http.get("/getSalesman/" + token).then(function (data) {
@@ -153,7 +124,7 @@ app.controller("dashboardController", function ($interval, $location, firebaseRe
   };
 
 
-  
+
 
 
 });

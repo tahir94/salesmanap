@@ -4,7 +4,7 @@
     <button class="button button-stable" ng-click="signOut()" ng-show="isLoggedIn"  >Sign Out</button>
     </div>
     <br><br><br>
-   
+
 <br><br><br>
 
 
@@ -23,38 +23,25 @@
 
 
 <div ng-show="!hide_company_input">
-<h1>Welcome to Company</h1>
+<h1 style="color: #808080">Welcome to Company</h1>
 
 <div class="list" ng-show="!mani">
   <label class="item item-input">
-    <span class="input-label">Company Name</span>
-    <input type="text" ng-model="comData.companyName">
+    <span class="input-label" style="background-color:	#596A70;color:#33CCFF;padding:15px;margin:-10px">Company Name</span>
+    <input style="padding:25px" type="text" ng-model="comData.companyName" ng-required="required">
   </label>
- 
 
-  <!--<div class="list" ng-show="!mani">
+
+  <div class="list" ng-show="!mani">
   <label class="item item-input">
-    <span class="input-label">Company Address</span>
-    <input type="text" ng-model="company.companyAddress">
+    <span class="input-label" style="background-color:#596A70;color:#33CCFF;padding:15px;margin:-10px">Company Address</span>
+    <input type="text" style="padding:25px" ng-model="company.companyAddress" ng-required="required">
   </label>
-  
-  
-  <div class="list">
-  <label class="item item-input">
-    <span class="input-label">Products</span>
-    <input type="text" ng-model="company.Products">
-  </label>
-  </div>
-  -->
-  <button class="button button-stable" ng-click="addCompany(comData)" >Add Company</button>
-  
-  
+
+
+  <button class="button button-energized" ng-click="addCompany(comData)" >Add Company</button>
+
   </div>
 </div>
-  <!--<div class="list">
-  <label class="item item-input">
-    <span class="input-label">Products</span>
-    <input type="text" ng-model="company.products">
-  </label>
- -->
- 
+</div>
+
